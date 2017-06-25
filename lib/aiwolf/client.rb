@@ -1,3 +1,4 @@
+require 'aiwolf'
 require 'aiwolf/base'
 require 'aiwolf/protocol/attack'
 require 'aiwolf/protocol/daily_finish'

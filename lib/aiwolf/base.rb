@@ -3,20 +3,16 @@ require 'aiwolf/base/logger'
 
 module Aiwolf
   module Base
+    include EventMachine::Protocols::LineProtocol
+
     include Aiwolf::Base::CommandParser
     include Aiwolf::Base::Logger
 
-    def post_init
-      @buffered_data = ''
-    end
-
-    def receive_data(data)
-      buffered(data).split("\n").each do |json|
-        logger.debug(json)
-        result = parse_command(JSON.parse(json, symbolize_names: true))
-        logger.debug(result)
-        send_data("#{result}\n") unless result.nil? or result.empty?
-      end
+    def receive_line(data)
+      logger.debug(data)
+      result = parse_command(JSON.parse(data, symbolize_names: true))
+      logger.debug(result)
+      send_data("#{result}\n") unless result.nil? or result.empty?
     end
 
     def unbind
@@ -25,13 +21,6 @@ module Aiwolf
     end
 
     private
-
-    def buffered(data)
-      (append_data, _v, new_buffered_data) = data.rpartition("\n")
-      (@buffered_data + append_data).tap do
-        @buffered_data = new_buffered_data
-      end
-    end
 
     def try(method, *params)
       if respond_to?(method)
