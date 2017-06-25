@@ -1,5 +1,5 @@
 module Aiwolf
-  module Protocol
+  module Commands
     module Talk
       def inner_command_talk(packet)
         send(:command_talk, packet[:gameInfo]) || ''

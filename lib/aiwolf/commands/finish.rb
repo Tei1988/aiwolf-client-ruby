@@ -1,5 +1,5 @@
 module Aiwolf
-  module Protocol
+  module Commands
     module Finish
       def inner_command_finish(packet)
         send(:command_finish, packet[:gameInfo])

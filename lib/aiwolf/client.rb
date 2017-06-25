@@ -1,34 +1,34 @@
 require 'aiwolf'
 require 'aiwolf/base'
-require 'aiwolf/protocol/attack'
-require 'aiwolf/protocol/daily_finish'
-require 'aiwolf/protocol/daily_initialize'
-require 'aiwolf/protocol/divine'
-require 'aiwolf/protocol/finish'
-require 'aiwolf/protocol/guard'
-require 'aiwolf/protocol/initialize'
-require 'aiwolf/protocol/name'
-require 'aiwolf/protocol/role'
-require 'aiwolf/protocol/talk'
-require 'aiwolf/protocol/vote'
-require 'aiwolf/protocol/whisper'
+require 'aiwolf/commands/attack'
+require 'aiwolf/commands/daily_finish'
+require 'aiwolf/commands/daily_initialize'
+require 'aiwolf/commands/divine'
+require 'aiwolf/commands/finish'
+require 'aiwolf/commands/guard'
+require 'aiwolf/commands/initialize'
+require 'aiwolf/commands/name'
+require 'aiwolf/commands/role'
+require 'aiwolf/commands/talk'
+require 'aiwolf/commands/vote'
+require 'aiwolf/commands/whisper'
 
 module Aiwolf
   class Client < EventMachine::Connection
     include Aiwolf::Base
 
-    include Aiwolf::Protocol::Attack
-    include Aiwolf::Protocol::DailyFinish
-    include Aiwolf::Protocol::DailyInitialize
-    include Aiwolf::Protocol::Divine
-    include Aiwolf::Protocol::Finish
-    include Aiwolf::Protocol::Guard
-    include Aiwolf::Protocol::Initialize
-    include Aiwolf::Protocol::Name
-    include Aiwolf::Protocol::Role
-    include Aiwolf::Protocol::Talk
-    include Aiwolf::Protocol::Vote
-    include Aiwolf::Protocol::Whisper
+    include Aiwolf::Commands::Attack
+    include Aiwolf::Commands::DailyFinish
+    include Aiwolf::Commands::DailyInitialize
+    include Aiwolf::Commands::Divine
+    include Aiwolf::Commands::Finish
+    include Aiwolf::Commands::Guard
+    include Aiwolf::Commands::Initialize
+    include Aiwolf::Commands::Name
+    include Aiwolf::Commands::Role
+    include Aiwolf::Commands::Talk
+    include Aiwolf::Commands::Vote
+    include Aiwolf::Commands::Whisper
 
   end
 end

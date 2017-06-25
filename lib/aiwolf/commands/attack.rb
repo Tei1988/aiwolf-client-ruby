@@ -1,5 +1,5 @@
 module Aiwolf
-  module Protocol
+  module Commands
     module Attack
       def inner_command_attack(packet)
         hash = send(:command_attack, packet[:gameInfo])

@@ -1,5 +1,5 @@
 module Aiwolf
-  module Protocol
+  module Commands
     module Divine
       def inner_command_divine(packet)
         hash = send(:command_divine, packet[:gameInfo])

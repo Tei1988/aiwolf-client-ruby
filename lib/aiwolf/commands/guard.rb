@@ -1,5 +1,5 @@
 module Aiwolf
-  module Protocol
+  module Commands
     module Guard
       def inner_command_guard(packet)
         hash = send(:command_guard, packet[:gameInfo])
