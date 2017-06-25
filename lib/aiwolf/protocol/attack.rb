@@ -2,7 +2,9 @@ module Aiwolf
   module Protocol
     module Attack
       def inner_command_attack(packet)
-        send(:command_attack, packet[:gameInfo]) || ''
+        hash = send(:command_attack, packet[:gameInfo])
+        return '' if hash.nil? || !hash.empty?
+        JSON.generate(hash)
       end
     end
   end
