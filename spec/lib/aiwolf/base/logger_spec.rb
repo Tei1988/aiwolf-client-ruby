@@ -22,7 +22,7 @@ RSpec.describe Aiwolf::Base::Logger do
     end
     context 'called after assigns' do
       let(:logger) { Logger.new(STDOUT) }
-      before { instance.logger = logger}
+      before { instance.logger = logger }
       it 'returns Logger' do
         expect(instance.logger)
           .to eql logger

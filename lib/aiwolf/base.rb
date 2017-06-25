@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'aiwolf/base/command_parser'
 require 'aiwolf/base/logger'
 
@@ -12,12 +14,12 @@ module Aiwolf
       logger.debug(data)
       result = parse_command(JSON.parse(data, symbolize_names: true))
       logger.debug(result)
-      send_data("#{result}\n") unless result.nil? or result.empty?
+      send_data("#{result}\n") unless result.nil? || result.empty?
     end
 
     def unbind
       logger.debug('connection closed')
-      EventMachine::stop_event_loop
+      EventMachine.stop_event_loop
     end
   end
 end

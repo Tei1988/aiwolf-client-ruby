@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'aiwolf'
 require 'aiwolf/base'
 require 'aiwolf/commands/attack'
@@ -29,6 +31,5 @@ module Aiwolf
     include Aiwolf::Commands::Talk
     include Aiwolf::Commands::Vote
     include Aiwolf::Commands::Whisper
-
   end
 end

@@ -1,53 +1,53 @@
 # frozen_string_literal: true
 
 require 'rspec_helper'
-require 'aiwolf/commands/guard'
+require 'aiwolf/commands/daily_initialize'
 
-RSpec.describe Aiwolf::Commands::Guard do
+RSpec.describe Aiwolf::Commands::DailyInitialize do
   let(:clazz) do
     Struct.new(nil) do
-      include Aiwolf::Commands::Guard
+      include Aiwolf::Commands::DailyInitialize
 
-      def command_guard(game_info)
+      def command_daily_initialize(game_info)
         game_info
       end
     end
   end
   subject(:instance) { clazz.new }
 
-  it { is_expected.to respond_to(:inner_command_guard) }
+  it { is_expected.to respond_to(:inner_command_daily_initialize) }
 
-  describe '#inner_command_guard' do
-    let(:expected_call_method) { :command_guard }
+  describe '#inner_command_daily_initialize' do
+    let(:expected_call_method) { :command_daily_initialize }
     let(:packet) { { gameInfo: expected_call_args } }
     context 'called' do
       let(:expected_call_args) { { agentIdx: 1 } }
-      it 'calls command_guard with Hash and returns JSON' do
+      it 'calls command_daily_initialize with Hash and returns nil' do
         expect_any_instance_of(clazz)
           .to receive(expected_call_method).with(expected_call_args).once
                                            .and_return(expected_call_args)
-        expect(instance.inner_command_guard(packet))
-          .to eql JSON.generate(agentIdx: 1)
+        expect(instance.inner_command_daily_initialize(packet))
+          .to be_nil
       end
     end
     context 'called' do
       let(:expected_call_args) { {} }
-      it 'calls command_guard with empty Hash and returns blank' do
+      it 'calls command_daily_initialize with empty Hash and returns nil' do
         expect_any_instance_of(clazz)
           .to receive(expected_call_method).with(expected_call_args).once
                                            .and_return(expected_call_args)
-        expect(instance.inner_command_guard(packet))
-          .to eql ''
+        expect(instance.inner_command_daily_initialize(packet))
+          .to be_nil
       end
     end
     context 'called' do
       let(:expected_call_args) { nil }
-      it 'calls command_guard with nil and returns blank' do
+      it 'calls command_daily_initialize with nil and returns nil' do
         expect_any_instance_of(clazz)
           .to receive(expected_call_method).with(expected_call_args).once
                                            .and_return(expected_call_args)
-        expect(instance.inner_command_guard(packet))
-          .to eql ''
+        expect(instance.inner_command_daily_initialize(packet))
+          .to be_nil
       end
     end
   end

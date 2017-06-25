@@ -8,7 +8,7 @@ RSpec.describe Aiwolf::Base::CommandParser do
     Struct.new(nil) do
       include Aiwolf::Base::CommandParser
 
-      def inner_command_hoge(packet)
+      def inner_command_hoge(_packet)
         true
       end
     end
