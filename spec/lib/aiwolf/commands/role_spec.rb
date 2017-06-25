@@ -7,10 +7,6 @@ RSpec.describe Aiwolf::Commands::Role do
   let(:clazz) do
     Struct.new(nil) do
       include Aiwolf::Commands::Role
-
-      def command_role(game_info)
-        game_info
-      end
     end
   end
   subject(:instance) { clazz.new }

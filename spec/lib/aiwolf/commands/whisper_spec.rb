@@ -7,10 +7,6 @@ RSpec.describe Aiwolf::Commands::Whisper do
   let(:clazz) do
     Struct.new(nil) do
       include Aiwolf::Commands::Whisper
-
-      def command_whisper(game_info)
-        game_info
-      end
     end
   end
   subject(:instance) { clazz.new }

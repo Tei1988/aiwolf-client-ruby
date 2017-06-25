@@ -7,10 +7,6 @@ RSpec.describe Aiwolf::Commands::Talk do
   let(:clazz) do
     Struct.new(nil) do
       include Aiwolf::Commands::Talk
-
-      def command_talk(game_info)
-        game_info
-      end
     end
   end
   subject(:instance) { clazz.new }

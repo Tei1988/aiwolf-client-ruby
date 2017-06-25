@@ -7,10 +7,6 @@ RSpec.describe Aiwolf::Commands::Vote do
   let(:clazz) do
     Struct.new(nil) do
       include Aiwolf::Commands::Vote
-
-      def command_vote(game_info)
-        game_info
-      end
     end
   end
   subject(:instance) { clazz.new }

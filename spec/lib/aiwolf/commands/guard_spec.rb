@@ -7,10 +7,6 @@ RSpec.describe Aiwolf::Commands::Guard do
   let(:clazz) do
     Struct.new(nil) do
       include Aiwolf::Commands::Guard
-
-      def command_guard(game_info)
-        game_info
-      end
     end
   end
   subject(:instance) { clazz.new }

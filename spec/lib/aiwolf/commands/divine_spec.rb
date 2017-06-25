@@ -7,10 +7,6 @@ RSpec.describe Aiwolf::Commands::Divine do
   let(:clazz) do
     Struct.new(nil) do
       include Aiwolf::Commands::Divine
-
-      def command_divine(game_info)
-        game_info
-      end
     end
   end
   subject(:instance) { clazz.new }
