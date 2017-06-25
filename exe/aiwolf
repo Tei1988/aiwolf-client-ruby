@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "aiwolf"
+require "aiwolf/cli"
+
+Aiwolf::CLI.start
