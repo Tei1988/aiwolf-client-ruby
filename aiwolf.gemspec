@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Aiwolf 4.x Client Library for Ruby'
   spec.description   = 'This gem is useful for building Aiwolf 4.x Client.'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/Tei1988/aiwolf-client-ruby'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
