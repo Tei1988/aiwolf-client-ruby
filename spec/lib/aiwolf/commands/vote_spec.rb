@@ -37,7 +37,7 @@ RSpec.describe Aiwolf::Commands::Vote do
           .to receive(expected_call_method).with(expected_call_args).once
                                            .and_return(expected_call_args)
         expect(instance.inner_command_vote(packet))
-          .to eql ''
+          .to be_blank
       end
     end
     context 'called' do
@@ -47,7 +47,7 @@ RSpec.describe Aiwolf::Commands::Vote do
           .to receive(expected_call_method).with(expected_call_args).once
                                            .and_return(expected_call_args)
         expect(instance.inner_command_vote(packet))
-          .to eql ''
+          .to be_blank
       end
     end
   end
