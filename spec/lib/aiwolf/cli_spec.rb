@@ -16,7 +16,7 @@ RSpec.describe Aiwolf::CLI do
 
   describe '#execute' do
     context 'called' do
-      let(:options) { { host:'127.0.0.1', port: 10000 } }
+      let(:options) { { host: '127.0.0.1', port: 10000 } }
       it 'calls with options' do
         expect(EventMachine)
           .to receive(:run)
