@@ -19,13 +19,5 @@ module Aiwolf
       logger.debug('connection closed')
       EventMachine::stop_event_loop
     end
-
-    private
-
-    def try(method, *params)
-      if respond_to?(method)
-        send(method, *params)
-      end
-    end
   end
 end
