@@ -4,7 +4,7 @@ module Aiwolf
   module Commands
     module Talk
       def inner_command_talk(packet)
-        send(:command_talk, packet[:gameInfo]) || ''
+        send(:command_talk, packet[:talkHistory]) || ''
       end
     end
   end
