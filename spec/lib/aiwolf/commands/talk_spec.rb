@@ -15,7 +15,7 @@ RSpec.describe Aiwolf::Commands::Talk do
 
   describe '#inner_command_talk' do
     let(:expected_call_method) { :command_talk }
-    let(:packet) { { gameInfo: expected_call_args } }
+    let(:packet) { { talkHistory: expected_call_args } }
     context 'called' do
       let(:expected_call_args) { 'HOGE' }
       it 'calls command_talk and returns HOGE' do

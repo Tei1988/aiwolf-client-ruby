@@ -15,7 +15,7 @@ RSpec.describe Aiwolf::Commands::Whisper do
 
   describe '#inner_command_whisper' do
     let(:expected_call_method) { :command_whisper }
-    let(:packet) { { gameInfo: expected_call_args } }
+    let(:packet) { { whisperHistory: expected_call_args } }
     context 'called' do
       let(:expected_call_args) { 'HOGE' }
       it 'calls command_whisper and returns HOGE' do
