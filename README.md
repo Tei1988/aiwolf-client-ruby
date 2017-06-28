@@ -18,9 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-    $ bin/aiwolf[ -h host][ -p port] SampleRoleAssignPlayer
+    $ bin/aiwolf execute[ -h host][ -p port] SampleRoleAssignPlayer
 
-I try to port sample implemented codes from https://github.com/aiwolf/AIWolfCommon .
+  See also https://github.com/Tei1988/aiwolf-player-sample-villager .  
+  I implemented Villager using this gem as a sample.
+
+  https://github.com/Tei1988/aiwolf-player-sample-villager もご参照ください。  
+  サンプルとしてこのgemを使って村人を実装してみました。
 
 ## Contributing
 
